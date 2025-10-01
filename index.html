@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YOUR_NAME — Cybersecurity Portfolio</title>
+  <meta name="description" content="Portfolio of YOUR_NAME — aspiring cybersecurity professional. Projects, labs, certifications, and contact." />
+  <meta property="og:title" content="YOUR_NAME — Cybersecurity Portfolio" />
+  <meta property="og:description" content="Projects, labs, certifications, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://avatars.githubusercontent.com/u/1?v=4" />
+  <meta name="theme-color" content="#0b0f14" />
+  <style>
+    :root{
+      --bg:#0b0f14;--panel:#0e131a;--panel-2:#0f172a;--card:#111827;--text:#e6eef6;--muted:#94a3b8;--line:#1f2937;--accent:#34d399;--accent-2:#22c55e;--warn:#f59e0b;
+      --radius:16px;--radius-lg:24px;--shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#0c1219 35%,#0b1220 100%);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:radial-gradient(circle at 30% 30%,var(--accent),var(--accent-2));box-shadow:0 0 12px var(--accent)}
+    .navlinks{display:flex;flex-wrap:wrap;gap:14px}
+    .navlinks a{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid transparent}
+    .navlinks a:hover{border-color:var(--line)}
+    .toggle{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#0a0f15;cursor:pointer}
+
+    .hero{display:grid;grid-template-columns:1.4fr .6fr;gap:28px;align-items:center;padding:36px 0}
+    .hero .card{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow)}
+    h1{font-size:38px;line-height:1.15;margin:0 0 8px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0b121b;cursor:pointer}
+    .btn.primary{background:linear-gradient(180deg,#0f231b,#0a1510);border-color:#133826}
+    .btn .pill{font-size:12px;border:1px solid #1f3a2e;border-radius:999px;padding:2px 8px;color:#a7f3d0;background:#07130f}
+
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .kpis .k{background:#0a1119;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+    .k .l{color:var(--muted);font-size:12px}
+    .k .v{font-weight:700}
+
+    section{padding:32px 0}
+    section h2{font-size:26px;margin:0 0 16px}
+
+    .badges{display:flex;flex-wrap:wrap;gap:8px}
+    .badge{font-size:13px;color:#cbd5e1;padding:6px 10px;border-radius:999px;border:1px dashed #1d283a;background:#0b1422}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0 0 12px;color:#c7d2fe}
+    .meta{font-size:12px;color:var(--muted)}
+    .tag{display:inline-block;font-size:12px;padding:3px 8px;border:1px solid #1e293b;border-radius:999px;background:#0a1422;margin-right:6px}
+
+    .timeline{border-left:2px dashed #1f2937;padding-left:14px}
+    .timeline .item{margin:12px 0}
+    .timeline .item .when{font-size:12px;color:var(--muted)}
+
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+    footer{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;color:var(--muted);font-size:14px}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      .grid{grid-template-columns:1fr}
+      .contact{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="sr-only">Skip to content</a>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><span class="dot" aria-hidden="true"></span> <span>YOUR_NAME</span></div>
+        <div class="navlinks" role="navigation" aria-label="Primary">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#labs">Labs</a>
+          <a href="#writeups">Writeups</a>
+          <a href="#certs">Certs</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button class="toggle" id="themeToggle" aria-label="Toggle theme">🌗</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <section class="hero" id="home">
+      <div class="card">
+        <h1>YOUR_NAME</h1>
+        <p class="subtitle">Aspiring Cybersecurity Analyst • Security+ • Network+ (studying) • Florida, USA</p>
+        <div class="badges" aria-label="Skills">
+          <span class="badge">Networking</span>
+          <span class="badge">Linux</span>
+          <span class="badge">Windows Server / AD</span>
+          <span class="badge">Wireshark</span>
+          <span class="badge">Splunk</span>
+          <span class="badge">pfSense</span>
+          <span class="badge">Scripting (Python/Bash)</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="assets/YOUR_RESUME_FILE_NAME.pdf" target="_blank" rel="noopener">
+            <span>Download Resume</span>
+            <span class="pill">PDF</span>
+          </a>
+          <a class="btn" href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="#contact">Email Me</a>
+        </div>
+        <div class="kpis" aria-label="Quick facts">
+          <div class="k"><div class="l">Projects</div><div class="v">4+</div></div>
+          <div class="k"><div class="l">Homelab VMs</div><div class="v">3–6</div></div>
+          <div class="k"><div class="l">CTFs Solved</div><div class="v">N/A</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>At a Glance</h3>
+        <ul>
+          <li>Focused on SOC / Blue Team fundamentals, network defense, and incident response.</li>
+          <li>Hands‑on labs with pfSense firewall, Windows AD, and Splunk SIEM.</li>
+          <li>Writing clear documentation &amp; step‑by‑step reports (e.g., findings, remediation).</li>
+        </ul>
+        <p class="meta">⭐ Tip: Keep this section short. Recruiters scan, then jump to Projects.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Write 3–4 sentences about your background, what drew you to cybersecurity, and what you’re learning now. Example: 
+      <em>I’m a hands‑on learner building a home SOC to monitor Windows and Linux endpoints. I document everything I build to demonstrate reproducible results and clear communication.</em></p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects (Selected)</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Splunk SOC Home Lab: Brute‑Force Detection</h3>
+          <p>Built a mini SOC: Windows Server + Win10 client sending logs to Splunk. Detected and visualized RDP brute‑force attempts; wrote correlation search &amp; alert.</p>
+          <div class="meta">Stack: Windows, Splunk, Sysmon, RDP logs</div>
+          <p>
+            <span class="tag">Detection</span>
+            <span class="tag">SIEM</span>
+            <span class="tag">KQL→SPL logic</span>
+          </p>
+          <p><a href="https://github.com/YOUR_GITHUB/splunk-soc-lab" target="_blank" rel="noopener">Repo</a> • <a href="#writeups">Writeup</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Vulnerability Scanning &amp; Remediation</h3>
+          <p>Scanned a lab subnet with OpenVAS; triaged findings (CVSS), verified false positives, then patched, reconfigured, and re‑scanned to confirm remediation.</p>
+          <div class="meta">Stack: OpenVAS, Ubuntu, Windows</div>
+          <p>
+            <span class="tag">VM</span>
+            <span class="tag">Patch Mgmt</span>
+            <span class="tag">Reporting</span>
+          </p>
+          <p><a href="https://github.com/YOUR_GITHUB/vuln-mgmt-lab" target="_blank" rel="noopener">Repo</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Wireshark Traffic Analysis</h3>
+          <p>Analyzed a suspicious PCAP; identified C2 beacons, reconstructed HTTP objects, and produced a short IR report with IOCs and recommendations.</p>
+          <div class="meta">Stack: Wireshark, Zeek (optional)</div>
+          <p>
+            <span class="tag">IR</span>
+            <span class="tag">PCAP</span>
+            <span class="tag">IOCs</span>
+          </p>
+          <p><a href="https://github.com/YOUR_GITHUB/pcap-analysis" target="_blank" rel="noopener">Repo</a></p>
+        </article>
+      </div>
+      <p class="meta">Add more by duplicating an <code>&lt;article class="card"&gt;...&lt;/article&gt;</code> block.</p>
+    </section>
+
+    <section id="labs">
+      <h2>Homelab</h2>
+      <div class="timeline">
+        <div class="item">
+          <strong>pfSense Firewall</strong>
+          <div class="when">Network segmentation, NAT, and IDS/IPS (Suricata)</div>
+        </div>
+        <div class="item">
+          <strong>Active Directory</strong>
+          <div class="when">AD DS, users/groups, GPO, auditing</div>
+        </div>
+        <div class="item">
+          <strong>SIEM</strong>
+          <div class="when">Sysmon + Winlogbeat/Forwarder to Splunk; basic detections</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="writeups">
+      <h2>Writeups</h2>
+      <ul>
+        <li><a href="#">How I Built a Mini SOC with Splunk</a> — data sources, dashboards, and alerts.</li>
+        <li><a href="#">OpenVAS Scan Triage: From Findings to Fix</a> — prioritization and remediation notes.</li>
+        <li><a href="#">PCAP Deep Dive</a> — extracting IOCs and reporting to stakeholders.</li>
+      </ul>
+      <p class="meta">Tip: you can host writeups as Markdown files in your repo and link them here.</p>
+    </section>
+
+    <section id="certs">
+      <h2>Certifications</h2>
+      <div class="badges">
+        <span class="badge">CompTIA Security+ (SY0‑701)</span>
+        <span class="badge">CompTIA Network+ (Exam Date: 2025‑11‑04)</span>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:YOUR_EMAIL">YOUR_EMAIL</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/YOUR_LINKEDIN/" target="_blank" rel="noopener">linkedin.com/in/YOUR_LINKEDIN</a></p>
+        <p>GitHub: <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener">github.com/YOUR_GITHUB</a></p>
+      </div>
+      <div class="card">
+        <h3>How to Use This Template</h3>
+        <ol>
+          <li>Replace all <strong>YOUR_...</strong> placeholders (name, links, email).</li>
+          <li>Upload your resume PDF to <code>assets/</code> and update the button link.</li>
+          <li>Add or edit project cards in the <strong>Projects</strong> section.</li>
+          <li>Update <strong>Certifications</strong> badges.</li>
+        </ol>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> YOUR_NAME · Last updated <span id="lastUpdated"></span></div>
+    </footer>
+  </main>
+
+  <script>
+    // Theme toggle with localStorage
+    const themeToggle = document.getElementById('themeToggle');
+    function setTheme(mode){
+      if(mode==='light'){
+        document.documentElement.style.setProperty('--bg','#f7fafc');
+        document.documentElement.style.setProperty('--panel','#ffffff');
+        document.documentElement.style.setProperty('--panel-2','#ffffff');
+        document.documentElement.style.setProperty('--card','#ffffff');
+        document.documentElement.style.setProperty('--text','#0b1220');
+        document.documentElement.style.setProperty('--muted','#334155');
+        document.documentElement.style.setProperty('--line','#e5e7eb');
+      } else {
+        document.documentElement.style.removeProperty('--bg');
+        document.documentElement.style.removeProperty('--panel');
+        document.documentElement.style.removeProperty('--panel-2');
+        document.documentElement.style.removeProperty('--card');
+        document.documentElement.style.removeProperty('--text');
+        document.documentElement.style.removeProperty('--muted');
+        document.documentElement.style.removeProperty('--line');
+      }
+    }
+    const saved = localStorage.getItem('theme');
+    if(saved) setTheme(saved);
+    themeToggle.addEventListener('click',()=>{
+      const current = localStorage.getItem('theme') || 'dark';
+      const next = current==='dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', next);
+      setTheme(next);
+    });
+
+    // Footer dates
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString();
+  </script>
+</body>
+</html>
