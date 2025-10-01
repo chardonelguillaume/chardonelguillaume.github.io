@@ -11,7 +11,41 @@
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/1?v=4" />
   <meta name="theme-color" content="#0b0f14" />
   <style>
-    /* same CSS as before */
+    :root{
+      --bg:#0b0f14;--panel:#0e131a;--panel-2:#0f172a;--card:#111827;--text:#e6eef6;--muted:#94a3b8;--line:#1f2937;--accent:#34d399;--accent-2:#22c55e;
+      --radius:16px;--radius-lg:24px;--shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#0c1219 35%,#0b1220 100%);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand .dot{width:10px;height:10px;border-radius:999px;background:radial-gradient(circle at 30% 30%,var(--accent),var(--accent-2));box-shadow:0 0 12px var(--accent)}
+    .navlinks{display:flex;flex-wrap:wrap;gap:14px}
+    .navlinks a{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid transparent}
+    .navlinks a:hover{border-color:var(--line)}
+    .toggle{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#0a0f15;cursor:pointer}
+
+    .hero{display:grid;grid-template-columns:1.4fr .6fr;gap:28px;align-items:center;padding:36px 0}
+    .hero .card{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow)}
+    h1{font-size:38px;line-height:1.15;margin:0 0 8px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0b121b;cursor:pointer}
+    .btn.primary{background:linear-gradient(180deg,#0f231b,#0a1510);border-color:#133826}
+    .btn .pill{font-size:12px;border:1px solid #1f3a2e;border-radius:999px;padding:2px 8px;color:#a7f3d0;background:#07130f}
+
+    section{padding:32px 0}
+    section h2{font-size:26px;margin:0 0 16px}
+
+    .badges{display:flex;flex-wrap:wrap;gap:8px}
+    .badge{font-size:13px;color:#cbd5e1;padding:6px 10px;border-radius:999px;border:1px dashed #1d283a;background:#0b1422}
+
+    footer{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;color:var(--muted);font-size:14px}
+
+    @media (max-width: 900px){.hero{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -87,13 +121,11 @@
       </div>
     </section>
 
-    <section id="contact" class="contact">
-      <div class="card">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:guillaumechardonel@gmail.com">guillaumechardonel@gmail.com</a></p>
-        <p>LinkedIn: <a href="https://www.linkedin.com/in/chardonelguillaume/" target="_blank">linkedin.com/in/chardonelguillaume</a></p>
-        <p>GitHub: <a href="https://github.com/guillaumechardonel" target="_blank">github.com/guillaumechardonel</a></p>
-      </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:guillaumechardonel@gmail.com">guillaumechardonel@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/chardonelguillaume/" target="_blank">linkedin.com/in/chardonelguillaume</a></p>
+      <p>GitHub: <a href="https://github.com/guillaumechardonel" target="_blank">github.com/guillaumechardonel</a></p>
     </section>
 
     <footer>
