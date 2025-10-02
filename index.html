@@ -22,6 +22,7 @@
     header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
     nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:10px;font-weight:700}
+    .brand img{width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
     .brand .dot{width:10px;height:10px;border-radius:999px;background:radial-gradient(circle at 30% 30%,var(--accent),var(--accent-2));box-shadow:0 0 12px var(--accent)}
     .navlinks{display:flex;flex-wrap:wrap;gap:14px}
     .navlinks a{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid transparent}
@@ -50,13 +51,33 @@
     footer{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;color:var(--muted);font-size:14px}
 
     @media (max-width: 900px){.hero-card{flex-direction:column;align-items:flex-start}.profile-pic{margin-bottom:12px}}
+      .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+    .p-card{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .p-card h3{margin:0 0 6px;font-size:18px}
+    .p-card p{margin:0 0 10px;color:#c7d2fe}
+    .p-meta{list-style:none;padding:0;margin:0 0 10px;font-size:13px;color:var(--muted);display:flex;gap:16px}
+    .p-kpis{display:flex;gap:8px;flex-wrap:wrap}
+    .p-kpis span{font-size:12px;border:1px solid #1e293b;border-radius:999px;padding:4px 8px;background:#0a1422}
+
   </style>
+  <link rel="icon" href="/favicon.ico">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="Chardonel Guillaume">
+  
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Chardonel Guillaume",
+    "url":"https://chardonelguillaume.github.io",
+    "email":"mailto:guillaumechardonel@gmail.com",
+    "sameAs":["https://github.com/guillaumechardonel","https://www.linkedin.com/in/chardonelguillaume/"]
+  }</script>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <div class="brand"><span class="dot"></span> <span>Chardonel Guillaume</span></div>
+        <div class="brand"><img src="profile.jpg" alt="Logo"><span>Chardonel Guillaume</span></div>
         <div class="navlinks">
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
@@ -106,9 +127,38 @@
       <p>I’m Chardonel Guillaume, an aspiring cybersecurity professional based in Fort Myers, FL. I recently earned the Google Cybersecurity Certificate and CompTIA Security+, and I’m currently working toward Network+. My background includes hands-on labs in networking, system administration, and security fundamentals. I’m passionate about building practical skills in incident detection, network defense, and risk management, with the goal of starting my career as a SOC Analyst or in a related entry-level security role.</p>
     </section>
 
+    <section id="skills">
+      <h2>Skills Snapshot</h2>
+      <div class="badges" aria-label="Skills">
+        <span class="badge">Security Operations (SOC)</span>
+        <span class="badge">SIEM (Splunk / Sentinel)</span>
+        <span class="badge">Network Analysis (Wireshark)</span>
+        <span class="badge">Windows / Linux Admin</span>
+        <span class="badge">pfSense / Firewalls</span>
+        <span class="badge">Vuln Mgmt (OpenVAS/Tenable)</span>
+        <span class="badge">Scripting (Python/Bash)</span>
+      </div>
+    </section>
+
     <section id="projects">
-      <h2>Projects (Coming Soon)</h2>
-      <p>You can showcase your labs, CTF writeups, and security projects here later.</p>
+      <h2>Projects (Selected)</h2>
+      <div class="project-grid">
+        <article class="p-card">
+          <h3>SOC Mini-Lab: Brute‑Force Detection</h3>
+          <p>Built a Windows lab forwarding logs to Splunk, created a correlation search for RDP brute‑force, and generated alerts.</p>
+          <ul class="p-meta"><li>Role: Blue Team</li><li>Tools: Windows, Sysmon, Splunk</li></ul>
+          <div class="p-kpis"><span>+92% FP ↓</span><span>1 alert rule</span><span>Dashboards: 2</span></div>
+          <p><a href="#">Writeup</a> · <a href="#">Repo</a></p>
+        </article>
+        <article class="p-card">
+          <h3>Vulnerability Triage & Remediation</h3>
+          <p>Scanned a subnet, prioritized CVEs by CVSS, validated findings, patched, and re‑scanned to verify remediation.</p>
+          <ul class="p-meta"><li>Role: Analyst</li><li>Tools: OpenVAS/Tenable</li></ul>
+          <div class="p-kpis"><span>12 findings</span><span>0 critical</span><span>100% remediated</span></div>
+          <p><a href="#">Writeup</a></p>
+        </article>
+      </div>
+      <p class="meta">Tip: Add measurable outcomes (alerts created, findings remediated, time saved).</p>
     </section>
 
     <section id="labs">
