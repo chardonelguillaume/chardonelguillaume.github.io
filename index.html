@@ -3,188 +3,317 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chardonel Guillaume — Cybersecurity Portfolio</title>
-  <meta name="description" content="Portfolio of Chardonel Guillaume — aspiring cybersecurity professional. Projects, labs, certifications, and contact." />
-  <meta property="og:title" content="Chardonel Guillaume — Cybersecurity Portfolio" />
-  <meta property="og:description" content="Projects, labs, certifications, and contact." />
+  <title>Chardonel Guillaume | IT Support & Network Technician</title>
+  <meta name="description" content="Chardonel Guillaume: CCNA-certified IT support and network technician. Home lab with Cisco, pfSense, Windows Server AD, Proxmox, Zabbix and Wazuh." />
+  <meta property="og:title" content="Chardonel Guillaume | IT Support & Network Technician" />
+  <meta property="og:description" content="CCNA, Network+, Security+. Home lab projects, troubleshooting write-ups, resume and contact." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://chardonelguillaume.github.io/profile.jpg" />
   <meta name="theme-color" content="#0b0f14" />
+  <meta name="robots" content="index,follow" />
+  <meta name="author" content="Chardonel Guillaume" />
   <style>
     :root{
-      --bg:#0b0f14;--panel:#0e131a;--panel-2:#0f172a;--card:#111827;--text:#e6eef6;--muted:#94a3b8;--line:#1f2937;--accent:#34d399;--accent-2:#22c55e;
-      --radius:16px;--radius-lg:24px;--shadow:0 10px 30px rgba(0,0,0,.35);
+      --bg:#0b0f14;--bg-2:#0b1220;--panel:#0e131a;--card:#111827;--text:#e6eef6;--muted:#94a3b8;--soft:#c7d2fe;
+      --line:#1f2937;--accent:#34d399;--accent-2:#22c55e;--chip:#0b1422;--chip-line:#1d283a;--btn:#0b121b;
+      --btn-primary:linear-gradient(180deg,#0f231b,#0a1510);--btn-primary-line:#133826;--pill:#07130f;--pill-text:#a7f3d0;
+      --header:rgba(11,15,20,.72);--radius:16px;--radius-lg:24px;--shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    [data-theme="light"]{
+      --bg:#f6f8fb;--bg-2:#eef2f7;--panel:#ffffff;--card:#ffffff;--text:#0b1220;--muted:#475569;--soft:#334155;
+      --line:#e2e8f0;--accent:#059669;--accent-2:#10b981;--chip:#f1f5f9;--chip-line:#cbd5e1;--btn:#ffffff;
+      --btn-primary:linear-gradient(180deg,#ecfdf5,#d1fae5);--btn-primary-line:#a7f3d0;--pill:#ecfdf5;--pill-text:#047857;
+      --header:rgba(246,248,251,.8);--shadow:0 10px 30px rgba(15,23,42,.08);
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,var(--bg),#0c1219 35%,#0b1220 100%);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),var(--bg-2) 100%);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Arial,"Noto Sans",sans-serif}
     a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;z-index:50;background:rgba(11,15,20,.7);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-    nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;font-weight:700}
-    .brand img{width:28px;height:28px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
-    .brand .dot{width:10px;height:10px;border-radius:999px;background:radial-gradient(circle at 30% 30%,var(--accent),var(--accent-2));box-shadow:0 0 12px var(--accent)}
-    .navlinks{display:flex;flex-wrap:wrap;gap:14px}
-    .navlinks a{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid transparent}
-    .navlinks a:hover{border-color:var(--line)}
-    .toggle{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:#0a0f15;cursor:pointer}
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
 
-    .hero{display:grid;grid-template-columns:1fr;gap:28px;align-items:center;padding:36px 0}
-    .hero .card{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow)}
+    header{position:sticky;top:0;z-index:50;background:var(--header);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--text)}
+    .brand:hover{text-decoration:none}
+    .brand img{width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid var(--accent)}
+    .navlinks{display:flex;flex-wrap:wrap;gap:6px}
+    .navlinks a{padding:6px 12px;border-radius:999px;border:1px solid transparent;color:var(--text);font-size:15px}
+    .navlinks a:hover{border-color:var(--line);text-decoration:none}
+    .toggle{border:1px solid var(--line);border-radius:999px;padding:6px 12px;background:var(--btn);color:var(--text);cursor:pointer;font-size:15px}
 
-    .hero-card {display:flex;align-items:center;gap:20px;}
-    .profile-pic {width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);}
+    .hero{padding:36px 0 12px}
+    .card{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius-lg);padding:28px;box-shadow:var(--shadow)}
+    .hero-card{display:flex;align-items:center;gap:24px}
+    .profile-pic{width:128px;height:128px;border-radius:50%;object-fit:cover;border:3px solid var(--accent);flex-shrink:0}
+    h1{font-size:38px;line-height:1.15;margin:0 0 6px}
+    .subtitle{color:var(--muted);margin:0 0 4px}
+    .status{display:inline-flex;align-items:center;gap:8px;margin:10px 0 0;font-size:14px;color:var(--pill-text);background:var(--pill);border:1px solid var(--btn-primary-line);border-radius:999px;padding:4px 12px}
+    .status .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 10px var(--accent)}
+    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;border:1px solid var(--line);background:var(--btn);color:var(--text);font-weight:600;font-size:15px;transition:transform .15s ease,border-color .15s ease}
+    .btn:hover{text-decoration:none;border-color:var(--accent);transform:translateY(-1px)}
+    .btn.primary{background:var(--btn-primary);border-color:var(--btn-primary-line)}
+    .btn .pill{font-size:12px;border:1px solid var(--btn-primary-line);border-radius:999px;padding:2px 8px;color:var(--pill-text);background:var(--pill);font-weight:500}
 
-    h1{font-size:38px;line-height:1.15;margin:0 0 8px}
-    .subtitle{color:var(--muted);margin:0 0 18px}
-    .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:#0b121b;cursor:pointer}
-    .btn.primary{background:linear-gradient(180deg,#0f231b,#0a1510);border-color:#133826}
-    .btn .pill{font-size:12px;border:1px solid #1f3a2e;border-radius:999px;padding:2px 8px;color:#a7f3d0;background:#07130f}
-
-    section{padding:32px 0}
-    section h2{font-size:26px;margin:0 0 16px}
+    section{padding:36px 0 8px}
+    section h2{font-size:26px;margin:0 0 6px}
+    .lead{color:var(--muted);margin:0 0 20px;max-width:760px}
+    .about p{max-width:820px;margin:0 0 12px}
 
     .badges{display:flex;flex-wrap:wrap;gap:8px}
-    .badge{font-size:13px;color:#cbd5e1;padding:6px 10px;border-radius:999px;border:1px dashed #1d283a;background:#0b1422}
+    .badge{font-size:13px;color:var(--soft);padding:6px 10px;border-radius:999px;border:1px dashed var(--chip-line);background:var(--chip)}
+    .hero .badges{margin-top:18px}
+    .hero .badge{border-style:solid;font-weight:600}
 
-    footer{border-top:1px solid var(--line);margin-top:24px;padding-top:16px;color:var(--muted);font-size:14px}
+    .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:22px}
+    .stat{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px}
+    .stat b{display:block;font-size:28px;line-height:1.2;color:var(--accent)}
+    .stat span{font-size:14px;color:var(--muted)}
 
-    @media (max-width: 900px){.hero-card{flex-direction:column;align-items:flex-start}.profile-pic{margin-bottom:12px}}
-      .project-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-    .p-card{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+    .p-card{display:flex;flex-direction:column;background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .p-card .shot{display:block;height:160px;background:#05080c;border-bottom:1px solid var(--line);overflow:hidden}
+    .p-card .shot img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .3s ease}
+    .p-card .shot:hover img{transform:scale(1.03)}
+    .p-body{padding:18px;display:flex;flex-direction:column;flex:1}
     .p-card h3{margin:0 0 6px;font-size:18px}
-    .p-card p{margin:0 0 10px;color:#c7d2fe}
-    .p-meta{list-style:none;padding:0;margin:0 0 10px;font-size:13px;color:var(--muted);display:flex;gap:16px}
-    .p-kpis{display:flex;gap:8px;flex-wrap:wrap}
-    .p-kpis span{font-size:12px;border:1px solid #1e293b;border-radius:999px;padding:4px 8px;background:#0a1422}
+    .p-card p{margin:0 0 12px;color:var(--soft)}
+    .p-meta{list-style:none;padding:0;margin:0 0 12px;font-size:13px;color:var(--muted)}
+    .p-kpis{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+    .p-kpis span{font-size:12px;border:1px solid var(--chip-line);border-radius:999px;padding:4px 10px;background:var(--chip);color:var(--soft)}
+    .more{margin-top:auto;font-weight:600}
 
+    .fix{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:var(--radius);padding:16px 18px}
+    .fix h3{margin:0 0 8px;font-size:17px}
+    .fix p{margin:0 0 6px;font-size:15px;color:var(--soft)}
+    .fix p:last-child{margin-bottom:0}
+    .fix .tag{display:inline-block;min-width:52px;font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.04em}
+    .center-link{margin:18px 0 0;font-weight:600}
+
+    .skill-groups{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+    .skill-groups h3{font-size:15px;margin:0 0 10px;color:var(--muted);font-weight:600}
+
+    .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+    .fixes{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .cert{background:linear-gradient(180deg,var(--panel),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+    .cert b{display:block;font-size:15px}
+    .cert span{font-size:13px;color:var(--muted)}
+
+    .contact-card{text-align:left}
+    .contact-card p{margin:0 0 4px}
+
+    footer{border-top:1px solid var(--line);margin-top:40px;padding:16px 0 28px;color:var(--muted);font-size:14px}
+
+    @media (max-width:760px){
+      .hero-card{flex-direction:column;align-items:flex-start;gap:14px}
+      h1{font-size:32px}
+      .navlinks{display:none}
+      .container{padding:0 16px}
+      .card{padding:20px}
+      .status{border-radius:14px}
+      .fixes{grid-template-columns:1fr}
+    }
   </style>
-  <link rel="icon" href="/favicon.ico">
-  <meta name="robots" content="index,follow">
-  <meta name="author" content="Chardonel Guillaume">
-  
   <script type="application/ld+json">{
     "@context":"https://schema.org",
     "@type":"Person",
     "name":"Chardonel Guillaume",
+    "jobTitle":"IT Support and Network Technician",
     "url":"https://chardonelguillaume.github.io",
     "email":"mailto:guillaumechardonel@gmail.com",
-    "sameAs":["https://github.com/guillaumechardonel","https://www.linkedin.com/in/chardonelguillaume/"]
+    "sameAs":["https://github.com/chardonelguillaume","https://www.linkedin.com/in/chardonelguillaume/"]
   }</script>
 </head>
 <body>
   <header>
     <div class="container">
       <nav>
-        <div class="brand"><img src="profile.jpg" alt="Logo"><span>Chardonel Guillaume</span></div>
+        <a class="brand" href="#top"><img src="profile.jpg" alt=""><span>Chardonel Guillaume</span></a>
         <div class="navlinks">
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#labs">Labs</a>
-          <a href="#writeups">Writeups</a>
+          <a href="#lab">Home Lab</a>
+          <a href="#fixes">Fixes</a>
+          <a href="#skills">Skills</a>
           <a href="#certs">Certs</a>
           <a href="#contact">Contact</a>
         </div>
-        <button class="toggle" id="themeToggle">🌗</button>
+        <button class="toggle" id="themeToggle" type="button" aria-label="Switch light or dark theme">🌗</button>
       </nav>
     </div>
   </header>
 
-  <main id="main" class="container">
-    <section class="hero" id="home">
+  <main id="top" class="container">
+    <section class="hero">
       <div class="card">
         <div class="hero-card">
-          <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+          <img src="profile.jpg" alt="Chardonel Guillaume" class="profile-pic">
           <div>
             <h1>Chardonel Guillaume</h1>
-            <p class="subtitle">Aspiring Cybersecurity Professional • Fort Myers, FL</p>
+            <p class="subtitle">IT Support &amp; Network Technician · Bonita Springs, FL</p>
+            <p class="subtitle">Open to Fort Myers/Naples, Tampa, Orlando and remote</p>
+            <span class="status"><span class="dot"></span>Looking for my first NOC or help desk role</span>
           </div>
         </div>
         <div class="badges">
-          <span class="badge">Networking</span>
-          <span class="badge">Linux</span>
-          <span class="badge">Windows Server / AD</span>
-          <span class="badge">Wireshark</span>
-          <span class="badge">Splunk</span>
-          <span class="badge">pfSense</span>
-          <span class="badge">Scripting (Python/Bash)</span>
+          <span class="badge">CCNA</span>
+          <span class="badge">CompTIA Network+</span>
+          <span class="badge">CompTIA Security+</span>
+          <span class="badge">Microsoft AZ-900</span>
         </div>
         <div class="cta">
-          <a class="btn primary" href="Chardonel_Resume2026.pdf" target="_blank" rel="noopener">
-            <span>Download Resume</span>
-            <span class="pill">PDF</span>
+          <a class="btn primary" href="Chardonel_Guillaume_Resume.pdf" target="_blank" rel="noopener">
+            <span>Download Resume</span><span class="pill">PDF</span>
           </a>
-          <a class="btn" href="https://github.com/chardonelguillaume" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://github.com/chardonelguillaume/Homelab" target="_blank" rel="noopener">Home Lab on GitHub</a>
           <a class="btn" href="https://www.linkedin.com/in/chardonelguillaume/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn" href="mailto:guillaumechardonel@gmail.com">Email Me</a>
         </div>
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="about">
       <h2>About</h2>
-      <p>I’m Chardonel Guillaume, an aspiring cybersecurity professional based in Fort Myers, FL. I recently earned the Google Cybersecurity Certificate and CompTIA Security+, and I’m currently working toward Network+. My background includes hands-on labs in networking, system administration, and security fundamentals. I’m passionate about building practical skills in incident detection, network defense, and risk management, with the goal of starting my career as a SOC Analyst or in a related entry-level security role.</p>
+      <p>I'm a CCNA-certified IT support and network tech moving from almost 5 years at UPS into NOC and help desk work.</p>
+      <p>I learn by building. My home lab runs a Cisco switch, a pfSense firewall, a Windows Server domain controller, Proxmox, backups and monitoring, and I break it on purpose to see what fails and how to fix it.</p>
+      <p>At UPS I run 120+ stops a day on tight deadlines and deal with customers face to face. I bring that same mindset to tickets and outages. I'm also working on my A.S. in Cybersecurity Operations at FSW, graduating May 2027.</p>
+    </section>
+
+    <section id="lab">
+      <h2>Home Lab</h2>
+      <p class="lead">Built under my desk on used hardware, Oct 2026 to present. The full write-up, network diagram and screenshots are <a href="https://github.com/chardonelguillaume/Homelab" target="_blank" rel="noopener">on GitHub</a>.</p>
+      <div class="stats">
+        <div class="stat"><b>5 VLANs</b><span>segmented with ACLs and firewall rules</span></div>
+        <div class="stat"><b>15 sec</b><span>to restore a deleted 20 GiB VM</span></div>
+        <div class="stat"><b>4 hosts</b><span>monitored by Zabbix over SNMPv3 and agents</span></div>
+        <div class="stat"><b>3 break tests</b><span>firewall, DC and DHCP relay taken down on purpose</span></div>
+      </div>
+      <div class="grid">
+        <article class="p-card">
+          <a class="shot" href="https://github.com/chardonelguillaume/Homelab/blob/main/01-vlans.png" target="_blank" rel="noopener">
+            <img src="https://raw.githubusercontent.com/chardonelguillaume/Homelab/main/01-vlans.png" alt="Cisco switch show vlan brief output" loading="lazy">
+          </a>
+          <div class="p-body">
+            <h3>Segmented network + VPN</h3>
+            <p>A Cisco Catalyst 2960-XR routes my VLANs, pfSense guards the edge, IoT and guest devices can't reach my servers, and WireGuard lets me in from my phone.</p>
+            <ul class="p-meta"><li>Cisco IOS · pfSense · WireGuard</li></ul>
+            <div class="p-kpis"><span>Inter-VLAN routing</span><span>ACLs</span><span>0.04% WAN loss</span></div>
+            <a class="more" href="https://github.com/chardonelguillaume/Homelab#project-1-segmented-network--vpn" target="_blank" rel="noopener">Read the write-up →</a>
+          </div>
+        </article>
+        <article class="p-card">
+          <a class="shot" href="https://github.com/chardonelguillaume/Homelab/blob/main/04-restore-15s.jpg" target="_blank" rel="noopener">
+            <img src="https://raw.githubusercontent.com/chardonelguillaume/Homelab/main/04-restore-15s.jpg" alt="Proxmox restore task log finishing in 14.99 seconds" loading="lazy">
+          </a>
+          <div class="p-body">
+            <h3>Backups + monitoring</h3>
+            <p>Proxmox Backup Server runs nightly backups with a backup-only account, and Zabbix watches the firewall, switch and domain controller. Its first real alert was my own ACL.</p>
+            <ul class="p-meta"><li>Proxmox · Proxmox Backup Server · Zabbix</li></ul>
+            <div class="p-kpis"><span>Restore tested</span><span>Nightly at 2 AM</span><span>All hosts green</span></div>
+            <a class="more" href="https://github.com/chardonelguillaume/Homelab#project-2-backups--monitoring" target="_blank" rel="noopener">Read the write-up →</a>
+          </div>
+        </article>
+        <article class="p-card">
+          <a class="shot" href="https://github.com/chardonelguillaume/Homelab/blob/main/07-wazuh-dc01.jpg" target="_blank" rel="noopener">
+            <img src="https://raw.githubusercontent.com/chardonelguillaume/Homelab/main/07-wazuh-dc01.jpg" alt="Wazuh dashboard showing DC01 as an active agent" loading="lazy">
+          </a>
+          <div class="p-body">
+            <h3>Active Directory domain</h3>
+            <p>A Windows Server 2025 domain controller running AD, DNS and DHCP. The switch relays DHCP across VLANs, and a Wazuh agent sends the DC's logs to my SIEM.</p>
+            <ul class="p-meta"><li>Windows Server · Active Directory · Wazuh</li></ul>
+            <div class="p-kpis"><span>AD DS</span><span>DNS + DHCP</span><span>DHCP relay</span></div>
+            <a class="more" href="https://github.com/chardonelguillaume/Homelab#project-3-active-directory-domain" target="_blank" rel="noopener">Read the write-up →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="fixes">
+      <h2>What broke and how I fixed it</h2>
+      <p class="lead">Real problems from building the lab, and how I tracked each one down.</p>
+      <div class="fixes">
+        <div class="fix">
+          <h3>Zabbix said the switch was down</h3>
+          <p><span class="tag">Proof</span>SNMP data was still coming in, so the switch was up and something was blocking ping.</p>
+          <p><span class="tag">Fix</span>My own ACL. One line permitting ping from the Zabbix server only.</p>
+        </div>
+        <div class="fix">
+          <h3>No internet on day one</h3>
+          <p><span class="tag">Proof</span><code>show ip route</code> showed no gateway of last resort.</p>
+          <p><span class="tag">Fix</span>The default route got dropped while pasting over a 9600-baud console. Re-added it.</p>
+        </div>
+        <div class="fix">
+          <h3>DHCP handed out 255.0.0.0</h3>
+          <p><span class="tag">Proof</span><code>ipconfig /all</code> on the PC showed the wrong mask.</p>
+          <p><span class="tag">Fix</span>The scope wizard defaults to /8 for 10.x addresses. Rebuilt the scope as /24.</p>
+        </div>
+        <div class="fix">
+          <h3>IoT device got no IP</h3>
+          <p><span class="tag">Proof</span><code>show interfaces status</code> proved the switch was set up right.</p>
+          <p><span class="tag">Fix</span>pfSense's DHCP server on the IoT interface was off. Turned it on.</p>
+        </div>
+      </div>
+      <p class="center-link"><a href="https://github.com/chardonelguillaume/Homelab#what-broke-and-how-i-fixed-it" target="_blank" rel="noopener">See all of them on GitHub →</a></p>
     </section>
 
     <section id="skills">
-      <h2>Skills Snapshot</h2>
-      <div class="badges" aria-label="Skills">
-        <span class="badge">Security Operations (SOC)</span>
-        <span class="badge">SIEM (Splunk / Sentinel)</span>
-        <span class="badge">Network Analysis (Wireshark)</span>
-        <span class="badge">Windows / Linux Admin</span>
-        <span class="badge">pfSense / Firewalls</span>
-        <span class="badge">Vuln Mgmt (OpenVAS/Tenable)</span>
-        <span class="badge">Scripting (Python/Bash)</span>
+      <h2>Skills</h2>
+      <div class="skill-groups">
+        <div>
+          <h3>Support</h3>
+          <div class="badges">
+            <span class="badge">Help desk</span><span class="badge">Troubleshooting</span><span class="badge">Customer service</span>
+            <span class="badge">ServiceNow (self-taught)</span><span class="badge">Hardware &amp; printers</span><span class="badge">Microsoft 365</span>
+          </div>
+        </div>
+        <div>
+          <h3>Systems</h3>
+          <div class="badges">
+            <span class="badge">Windows 10/11</span><span class="badge">Windows Server 2025</span><span class="badge">Active Directory</span>
+            <span class="badge">Group Policy</span><span class="badge">DNS</span><span class="badge">DHCP</span>
+            <span class="badge">macOS</span><span class="badge">Linux</span><span class="badge">Proxmox</span>
+          </div>
+        </div>
+        <div>
+          <h3>Networking</h3>
+          <div class="badges">
+            <span class="badge">TCP/IP</span><span class="badge">Subnetting</span><span class="badge">VLANs &amp; trunking</span>
+            <span class="badge">Inter-VLAN routing</span><span class="badge">OSPF</span><span class="badge">STP</span>
+            <span class="badge">ACLs</span><span class="badge">NAT</span><span class="badge">Cisco IOS</span><span class="badge">Wi-Fi</span>
+          </div>
+        </div>
+        <div>
+          <h3>Security &amp; monitoring</h3>
+          <div class="badges">
+            <span class="badge">pfSense</span><span class="badge">WireGuard VPN</span><span class="badge">Wazuh SIEM</span>
+            <span class="badge">Zabbix</span><span class="badge">SNMPv3</span><span class="badge">Wireshark</span><span class="badge">Nmap</span>
+          </div>
+        </div>
       </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects (Selected)</h2>
-      <div class="project-grid">
-        <article class="p-card">
-          <h3>SOC Mini-Lab: Brute‑Force Detection</h3>
-          <p>Built a Windows lab forwarding logs to Splunk, created a correlation search for RDP brute‑force, and generated alerts.</p>
-          <ul class="p-meta"><li>Role: Blue Team</li><li>Tools: Windows, Sysmon, Splunk</li></ul>
-          <div class="p-kpis"><span>+92% FP ↓</span><span>1 alert rule</span><span>Dashboards: 2</span></div>
-          <p><a href="#">Writeup</a> · <a href="#">Repo</a></p>
-        </article>
-        <article class="p-card">
-          <h3>Vulnerability Triage & Remediation</h3>
-          <p>Scanned a subnet, prioritized CVEs by CVSS, validated findings, patched, and re‑scanned to verify remediation.</p>
-          <ul class="p-meta"><li>Role: Analyst</li><li>Tools: OpenVAS/Tenable</li></ul>
-          <div class="p-kpis"><span>12 findings</span><span>0 critical</span><span>100% remediated</span></div>
-          <p><a href="#">Writeup</a></p>
-        </article>
-      </div>
-      <p class="meta">Tip: Add measurable outcomes (alerts created, findings remediated, time saved).</p>
-    </section>
-
-    <section id="labs">
-      <h2>Homelab (Coming Soon)</h2>
-      <p>Details about pfSense, Active Directory, SIEM, and other hands-on labs will go here.</p>
-    </section>
-
-    <section id="writeups">
-      <h2>Writeups (Coming Soon)</h2>
-      <p>Document your process for solving challenges, setting up labs, or investigating incidents here.</p>
     </section>
 
     <section id="certs">
-      <h2>Certifications</h2>
-      <div class="badges">
-        <span class="badge">CompTIA Security+ (SY0-701)</span>
-        <span class="badge">CompTIA Network+ (In Progress)</span>
-        <span class="badge">Google Cybersecurity Certificate</span>
+      <h2>Certifications &amp; Education</h2>
+      <div class="certs">
+        <div class="cert"><b>Cisco CCNA</b><span>Apr 2026</span></div>
+        <div class="cert"><b>CompTIA Network+</b><span>Oct 2025</span></div>
+        <div class="cert"><b>CompTIA Security+</b><span>Sep 2025</span></div>
+        <div class="cert"><b>Microsoft Azure Fundamentals (AZ-900)</b><span>Jan 2026</span></div>
+        <div class="cert"><b>Google Cybersecurity Certificate</b><span>Jun 2025</span></div>
+        <div class="cert"><b>A.S., Cybersecurity Operations</b><span>Florida SouthWestern State College · expected May 2027</span></div>
       </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email: <a href="mailto:guillaumechardonel@gmail.com">guillaumechardonel@gmail.com</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/chardonelguillaume/" target="_blank">linkedin.com/in/chardonelguillaume</a></p>
-      <p>GitHub: <a href="https://github.com/guillaumechardonel" target="_blank">github.com/guillaumechardonel</a></p>
+      <div class="card contact-card">
+        <p>Hiring or recruiting for NOC, help desk or IT support? My inbox is open.</p>
+        <div class="cta">
+          <a class="btn primary" href="mailto:guillaumechardonel@gmail.com">Email Me</a>
+          <a class="btn" href="https://www.linkedin.com/in/chardonelguillaume/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://github.com/chardonelguillaume/Homelab" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="Chardonel_Guillaume_Resume.pdf" target="_blank" rel="noopener">Resume <span class="pill">PDF</span></a>
+        </div>
+      </div>
     </section>
 
     <footer>
@@ -193,27 +322,18 @@
   </main>
 
   <script>
-    // Theme toggle + dates
-    const themeToggle = document.getElementById('themeToggle');
-    function setTheme(mode){
-      if(mode==='light'){
-        document.documentElement.style.setProperty('--bg','#f7fafc');
-        document.documentElement.style.setProperty('--text','#0b1220');
-      } else {
-        document.documentElement.style.removeProperty('--bg');
-        document.documentElement.style.removeProperty('--text');
-      }
-    }
-    const saved = localStorage.getItem('theme');
-    if(saved) setTheme(saved);
-    themeToggle.addEventListener('click',()=>{
-      const current = localStorage.getItem('theme') || 'dark';
-      const next = current==='dark' ? 'light' : 'dark';
-      localStorage.setItem('theme', next);
-      setTheme(next);
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
+    (function(){
+      var root = document.documentElement;
+      function getSaved(){ try { return localStorage.getItem('theme'); } catch(e){ return null; } }
+      function save(v){ try { localStorage.setItem('theme', v); } catch(e){} }
+      function apply(mode){ if(mode === 'light'){ root.setAttribute('data-theme','light'); } else { root.removeAttribute('data-theme'); } }
+      apply(getSaved());
+      document.getElementById('themeToggle').addEventListener('click', function(){
+        var next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        apply(next); save(next);
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
   </script>
 </body>
 </html>
